@@ -6,8 +6,10 @@ import TextArea from '../TextArea/TextArea.component';
 class Home extends Component {
   state = {
     title: '',
+    text: '',
   };
   setTitle = title => this.setState({title});
+  setText = text => this.setState({text});
 
   render() {
     return (
@@ -19,7 +21,19 @@ class Home extends Component {
           value={this.state.title}
         />
         <Text style={styles.textAreaTitle}>Please enter your note below </Text>
-        <TextArea style={styles.textArea} />
+        <TextArea
+          text={this.state.text}
+          style={styles.textArea}
+          onTextChange={this.setText}
+        />
+        <View style={styles.bottomBar}>
+          <View style={styles.bottomBarWrapper}>
+            <Text style={styles.saveBtn}>Save</Text>
+            <Text style={styles.characterCount}>
+              {this.state.text.length} characters
+            </Text>
+          </View>
+        </View>
       </View>
     );
   }

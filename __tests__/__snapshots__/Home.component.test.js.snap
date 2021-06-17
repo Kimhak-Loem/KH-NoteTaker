@@ -5,15 +5,47 @@ exports[`Home Component renders correctly 1`] = `
   style={
     Object {
       "alignItems": "center",
-      "flex": 1,
-      "flexDirection": "column",
-      "justifyContent": "center",
-      "padding": 20,
     }
   }
 >
-  <Text>
-     Please enter your note here
+  <Text
+    style={
+      Object {
+        "alignSelf": "flex-start",
+        "fontSize": 14,
+        "fontWeight": "700",
+        "padding": 10,
+      }
+    }
+  >
+    Note Title
+  </Text>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "backgroundColor": "#f0f6f7",
+        "padding": 10,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <Text
+    style={
+      Object {
+        "alignSelf": "flex-start",
+        "fontSize": 14,
+        "fontStyle": "italic",
+        "fontWeight": "200",
+        "padding": 10,
+      }
+    }
+  >
+    Please enter your note below 
   </Text>
   <TextInput
     allowFontScaling={true}
@@ -23,10 +55,8 @@ exports[`Home Component renders correctly 1`] = `
     style={
       Array [
         Object {
-          "borderColor": "gray",
-          "borderWidth": 1,
-          "height": 100,
-          "width": 200,
+          "fontSize": 14,
+          "fontWeight": "200",
         },
         Object {},
         undefined,

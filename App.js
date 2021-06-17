@@ -6,14 +6,20 @@
  * @flow strict-local
  */
 
-import React from 'react';
-import type {Node} from 'react';
+import React, {Component} from 'react';
+// import type {Node} from 'react';
 import Home from './app/components/Home/Home.component';
+import {connect} from 'react-redux';
 
-const App: () => Node = () => {
-  return (
-    <Home />
-  );
-};
+class App extends Component {
+  render() {
+    console.log(this.props.state);
+    return <Home />;
+  }
+}
 
-export default App;
+const mapStateToProps = state => ({state});
+
+const mapDispatchToProps = dispatch => ({dispatch});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

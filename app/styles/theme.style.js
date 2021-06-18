@@ -9,4 +9,6 @@ export default {
   BACKGROUND_COLOR_LIGHT: '#ebe9e9',
   CONTAINER_PADDING: 20,
   TEXT_INPUT_PADDING: 10,
+  ACTIVE_TAB_COLOR: 'green',
+  INACTIVE_TAB_COLOR: 'grey',
 };

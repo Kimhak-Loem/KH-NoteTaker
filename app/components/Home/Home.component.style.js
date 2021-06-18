@@ -44,4 +44,12 @@ export default StyleSheet.create({
     padding: 10,
     fontSize: theme.FONT_SIZE_SMALL,
   },
+  aboutUsWrapper: {
+    padding: 15,
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+  aboutUs: {
+    fontWeight: theme.FONT_WEIGHT_BOLD,
+  },
 });

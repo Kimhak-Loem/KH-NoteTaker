@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import {View, Text, TextInput, KeyboardAvoidingView} from 'react-native';
 import styles from './Home.component.style';
-import Notes from '../Notes/Notes.component.js';
+import Notes from '../Notes/Notes.component';
 import PropTypes from 'prop-types';
+import Touchable from 'react-native-platform-touchable';
 
 class Home extends Component {
   addNote = () => {
@@ -10,7 +11,7 @@ class Home extends Component {
     saveNote({title, text});
   };
   render() {
-    const {setTitle, title, text, setText, notes} = this.props;
+    const {setTitle, title, text, setText, notes, onAboutPress} = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.titleHeading}> Note Title</Text>
@@ -37,6 +38,9 @@ class Home extends Component {
           </View>
         </KeyboardAvoidingView>
         <Notes data={notes} />
+        <Touchable style={styles.aboutUsWrapper} onPress={onAboutPress}>
+          <Text style={styles.aboutUs}>About Us</Text>
+        </Touchable>
       </View>
     );
   }
@@ -49,6 +53,7 @@ Home.propTypes = {
   title: PropTypes.string,
   notes: PropTypes.array,
   text: PropTypes.string,
+  onAboutPress: PropTypes.func,
 };
 
 export default Home;

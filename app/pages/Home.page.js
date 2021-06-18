@@ -5,10 +5,17 @@ import {setTitle, setText, addNote} from '../redux/actions/index.actions';
 import Home from '../components/Home/Home.component';
 
 class HomePage extends Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
+  onAboutPress = () => {
+    this.props.navigation.navigate('AboutUs');
+  };
   render() {
     const {setTitle, setText, title, text, saveNote, notes} = this.props;
     return (
       <Home
+        onAboutPress={this.onAboutPress}
         setTitle={setTitle}
         notes={notes}
         saveNote={saveNote}
@@ -27,6 +34,7 @@ HomePage.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   notes: PropTypes.array,
+  navigation: PropTypes.any,
 };
 
 const mapStateToProps = state => ({

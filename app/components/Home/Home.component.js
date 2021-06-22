@@ -12,10 +12,13 @@ class Home extends Component {
     saveNote({title, text});
   };
   render() {
-    const {setTitle, title, text, setText, notes, onAboutPress} = this.props;
+    const {setTitle, title, text, setText, notes, onAboutPress, currentLanguage, toggleLanguage} = this.props;
     return (
       <View style={styles.container}>
         <Text style={styles.titleHeading}>{t('HOME_noteTitle')} {t('HOME_greeting', {name: 'John Doe'})}</Text>
+        <Touchable style={styles.changeLanguage} onPress={toggleLanguage} >
+          <Text style={styles.changeLanguageText}>{currentLanguage}</Text>
+        </Touchable>
         <TextInput
           style={styles.titleTextInput}
           onChangeText={setTitle}
@@ -55,6 +58,8 @@ Home.propTypes = {
   notes: PropTypes.array,
   text: PropTypes.string,
   onAboutPress: PropTypes.func,
+  currentLanguage: PropTypes.string,
+  toggleLanguage: PropTypes.func,
 };
 
 export default Home;

@@ -4,6 +4,7 @@ import styles from './Home.component.style';
 import Notes from '../Notes/Notes.component';
 import PropTypes from 'prop-types';
 import Touchable from 'react-native-platform-touchable';
+import t from '../../utils/language.utils';
 
 class Home extends Component {
   addNote = () => {
@@ -14,13 +15,13 @@ class Home extends Component {
     const {setTitle, title, text, setText, notes, onAboutPress} = this.props;
     return (
       <View style={styles.container}>
-        <Text style={styles.titleHeading}> Note Title</Text>
+        <Text style={styles.titleHeading}>{t('HOME_noteTitle')} {t('HOME_greeting', {name: 'John Doe'})}</Text>
         <TextInput
           style={styles.titleTextInput}
           onChangeText={setTitle}
           value={title}
         />
-        <Text style={styles.textAreaTitle}> Please type your note below </Text>
+        <Text style={styles.textAreaTitle}> {t('HOME_pleaseTypeYourNote')} </Text>
         <TextInput
           style={styles.textArea}
           multiline={true}
@@ -30,16 +31,16 @@ class Home extends Component {
         <KeyboardAvoidingView style={styles.bottomBar}>
           <View style={styles.bottomBarWrapper}>
             <Text style={styles.saveBtn} onPress={this.addNote}>
-              Save
+              {t('HOME_save')}
             </Text>
             <Text style={styles.characterCount}>
-              {text ? text.length : 0} characters
+              {text ? text.length : 0} {t('HOME_characters')}
             </Text>
           </View>
         </KeyboardAvoidingView>
         <Notes data={notes} />
         <Touchable style={styles.aboutUsWrapper} onPress={onAboutPress}>
-          <Text style={styles.aboutUs}>About Us</Text>
+          <Text style={styles.aboutUs}>{t('HOME_aboutUs')}</Text>
         </Touchable>
       </View>
     );

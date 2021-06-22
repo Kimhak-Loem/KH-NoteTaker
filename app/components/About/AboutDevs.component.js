@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text} from 'react-native';
 import styles from './AboutDevs.styles';
 import result from 'lodash/result';
+import t from '../../utils/language.utils';
 
 class AboutDevs extends Component {
   static navigationOptions = {
@@ -16,7 +17,7 @@ class AboutDevs extends Component {
     );
     return (
       <View style={styles.container}>
-        <Text>About the Creators </Text>
+        <Text> {t('ABOUT_theCreatorsDesc')} </Text>
         {navigatingFrom ? (
           <Text>Navigating from: {navigatingFrom} </Text>
         ) : null}

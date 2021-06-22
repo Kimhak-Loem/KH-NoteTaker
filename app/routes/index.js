@@ -1,20 +1,8 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomePage from '../pages/Home.page';
-import AboutApp from '../components/About/AboutApp.component';
-import AboutDevs from '../components/About/AboutDevs.component';
-
-const Tab = createBottomTabNavigator();
-const AboutUsRoutes = () => {
-  return (
-    <Tab.Navigator>
-      <Tab.Screen name="AboutApp" component={AboutApp} />
-      <Tab.Screen name="AboutDev" component={AboutDevs} />
-    </Tab.Navigator>
-  );
-};
+import AboutRoutesTabNavigator from './about.routes';
 
 const Stack = createStackNavigator();
 const RootStack = () => {
@@ -22,7 +10,7 @@ const RootStack = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="HomePage" component={HomePage} />
-        <Stack.Screen name="AboutUs" component={AboutUsRoutes} />
+        <Stack.Screen name="AboutUs" component={AboutRoutesTabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );

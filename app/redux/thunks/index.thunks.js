@@ -3,6 +3,7 @@ import {setI18njsConfig} from '../../utils/language.utils';
 import offlineStorage from "../../utils/offline.utils";
 
 export const setCurrentLanguage = (lang) => (dispatch) => {
+  offlineStorage.addSelectedLanguage(lang);
   setI18njsConfig(lang);
   dispatch(changeLanguage(lang));
 };
@@ -22,4 +23,12 @@ export const getNotesFromOfflineStorage = () => (dispatch) => {
       dispatch(populateNotes(notes));
     }
   });
+}
+
+export const setSelectedLanguageFromOfflineStorage = () => (dispatch) => {
+  offlineStorage.getStringValue(offlineStorage.keys.SELECTED_LANGUAGE).then((selectedLanguage) => {
+    if (selectedLanguage) {
+      dispatch(setCurrentLanguage(selectedLanguage));
+    }
+  })
 }

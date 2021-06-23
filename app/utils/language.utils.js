@@ -18,6 +18,7 @@ const translationGetters = {
   en: () => require('../languages/en.json'),
   'en-US': () => require('../languages/en.json'),
   hi: () => require('../languages/hi.json'),
+  ja: () => require('../languages/ja.json'),
 };
 
 export const setI18njsConfig = (languageTag) => {
@@ -29,7 +30,14 @@ export const setI18njsConfig = (languageTag) => {
   translate.cache.clear();
   // set i18n-js config
   // Lazy load according to languageTag
-  i18n.translations = {[languageTag]: translationGetters[languageTag]()};
+  // i18n.translations = {[languageTag]: translationGetters[languageTag]()};
+  // load the translation if languageTag include the key
+  // for example, if languageTag is en-US, it will load en, and en-US
+  Object.keys(translationGetters).forEach((key) => {
+    if (languageTag.includes(key)) {
+      i18n.translations[key] = translationGetters[key]();
+    }
+  });
   // Load all languages files
   /*
   Object.keys(translationGetters).forEach((languageTag) => {

@@ -8,14 +8,6 @@ import {name as appName} from './app.json';
 import React, {Component} from 'react';
 import store from './app/redux/store';
 import {Provider} from 'react-redux';
-import offlineStorage from './app/utils/offline.utils';
-import {populateNotes} from './app/redux/actions/index.actions';
-
-offlineStorage.get(offlineStorage.keys.NOTES).then((notes) => {
-  if (notes && notes.length > 0) {
-    store.dispatch(populateNotes(notes));
-  }
-})
 
 class NoteTaker extends Component {
   render() {

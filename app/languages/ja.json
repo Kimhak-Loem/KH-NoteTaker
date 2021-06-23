@@ -1,0 +1,15 @@
+{
+  "NAV_HEADER_TEXT_HOME": "ホーム ",
+  "HOME_greeting": "こんにちは %{name}",
+  "HOME_noteTitle": "ノートのタイトル",
+  "HOME_pleaseTypeYourNote": "以下にメモを入力してください。",
+  "HOME_startTakingNotes": "メモを取り始める",
+  "HOME_save": "保存する",
+  "HOME_characters": "キャラクタ",
+  "HOME_aboutUs": "私たちについて",
+  "ABOUT_us": "私たちについて",
+  "ABOUT_theApp": "米国について",
+  "ABOUT_theCreators": "アプリについて",
+  "ABOUT_theAppDesc": "開発について",
+  "ABOUT_theCreatorsDesc": "クリエイターについて"
+}
